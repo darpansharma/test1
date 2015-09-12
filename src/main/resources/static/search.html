@@ -1,0 +1,20 @@
+<form role="form" ng-submit="searchEmployee()">
+	<div ng-show="authenticated">
+		<h3>We can search now</h3>
+		<input type="text" ng-model="searchText"
+			ng-change="searchEmployee(text)" placeholder="search by last name" />
+		<h3>Search result</h3>
+		<table>
+
+			<tr ng-repeat="emp in searchResult">
+				<td><span>{{emp.firstName}} - {{emp.lastName}} -
+						{{emp.role}}</span></td>
+				<td ng-show="admin"><input type="button" value="Edt"
+					ng-click="edit($index)" /></td>
+				</td>
+				<td ng-show="admin"><input type="button" value="Del"
+					ng-click="remove($index)" /></td>
+			</tr>
+		</table>
+	</div>
+</form>

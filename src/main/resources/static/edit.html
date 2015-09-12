@@ -1,0 +1,41 @@
+<div class="alert alert-danger" ng-show="error">There was a
+	problem saving in. Please try again.</div>
+<div class="alert alert-danger" ng-show="success">saved.</div>
+Edit employee
+<form role="form" ng-submit="save()">
+	<div class="form-group">
+		<label for="firstName">first name:</label> <input type="text"
+			class="form-control" id="firstName" name="firstName"
+			ng-model="employee.firstName" />
+	</div>
+	<div class="form-group">
+		<label for="lastName">last name:</label> <input type="text"
+			class="form-control" id="lastName" name="lastName"
+			ng-model="employee.lastName" />
+	</div>
+
+	<div class="form-group">
+		<label for="role">role:</label> <select name="role"
+			ng-model="employee.role">
+			<option value="">---Please select---</option>
+			<option value="USER">USER</option>
+			<option value="ADMIN">ADMIN</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="location">location:</label> <input type="text"
+			class="form-control" id="location" name="location"
+			ng-model="employee.location" />
+	</div>
+	<div class="form-group">
+		<label for="location">phone:</label> <input type="text"
+			class="form-control" id="phone" name="phone"
+			ng-model="employee.phone" />
+	</div>
+	<div class="form-group">
+		<label for="email">email:</label> <input type="email"
+			class="form-control" id="email" name="email"
+			ng-model="employee.email" />
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
