@@ -54,8 +54,12 @@ public class Authentication extends AbstractUserDetailsAuthenticationProvider {
 				&& employee.isPasswordValid((String) authentication
 						.getCredentials())) {
 			auths.add(new SimpleGrantedAuthority(employee.getRole()));
-		} else {
-			auths.add(new SimpleGrantedAuthority("GUEST"));
+		}
+		;
+		if (auths.size() == 0) {
+			throw new AuthenticationException("invalid user") {
+				private static final long serialVersionUID = 44355055364912991L;
+			};
 		}
 		return new User(username, (String) authentication.getCredentials(),
 				auths);

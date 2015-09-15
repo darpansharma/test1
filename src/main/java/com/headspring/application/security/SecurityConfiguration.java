@@ -30,6 +30,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.hasAnyAuthority("ADMIN")
 				.antMatchers(HttpMethod.POST, "/employee/**")
 				.hasAnyAuthority("ADMIN")
+				.antMatchers(HttpMethod.PATCH, "/employee/**")
+				.hasAnyAuthority("ADMIN")
 				.antMatchers(HttpMethod.DELETE, "/employee/**")
 				.hasAnyAuthority("ADMIN").anyRequest().permitAll().and()
 				.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
