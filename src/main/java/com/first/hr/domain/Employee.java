@@ -1,4 +1,4 @@
-package com.headspring.hr.domain;
+package com.first.hr.domain;
 
 import org.springframework.data.annotation.Id;
 

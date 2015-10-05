@@ -1,4 +1,4 @@
-package com.headspring.application.security;
+package com.first.application.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.headspring.hr.domain.Employee;
-import com.headspring.hr.repository.InternalEmployeeRepository;
+import com.first.hr.domain.Employee;
+import com.first.hr.repository.InternalEmployeeRepository;
 
 @Component
 public class Authentication extends AbstractUserDetailsAuthenticationProvider {

@@ -1,4 +1,4 @@
-package com.headspring.application.resource;
+package com.first.application.resource;
 
 import java.security.Principal;
 
