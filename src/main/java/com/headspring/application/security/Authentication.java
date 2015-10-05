@@ -42,6 +42,9 @@ public class Authentication extends AbstractUserDetailsAuthenticationProvider {
 		if ("test".equals(username)
 				&& "test".equals((String) authentication.getCredentials())) {
 			auths.add(new SimpleGrantedAuthority("ADMIN"));
+
+			return new User(username, (String) authentication.getCredentials(),
+					auths);
 		}
 
 		List<Employee> employees = this.employees.findByLastName(username);
@@ -55,7 +58,8 @@ public class Authentication extends AbstractUserDetailsAuthenticationProvider {
 						.getCredentials())) {
 			auths.add(new SimpleGrantedAuthority(employee.getRole()));
 		} else {
-			auths.add(new SimpleGrantedAuthority("GUEST"));
+			throw new AuthenticationException("authentication error") {
+			};
 		}
 		return new User(username, (String) authentication.getCredentials(),
 				auths);
