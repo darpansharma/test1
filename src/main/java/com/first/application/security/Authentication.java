@@ -40,7 +40,7 @@ public class Authentication extends AbstractUserDetailsAuthenticationProvider {
 		List<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
 
 		if ("test".equals(username)
-				&& "test".equals((String) authentication.getCredentials())) {
+				&& "test".equals(authentication.getCredentials())) {
 			auths.add(new SimpleGrantedAuthority("ADMIN"));
 
 			return new User(username, (String) authentication.getCredentials(),
