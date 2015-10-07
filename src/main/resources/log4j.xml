@@ -8,9 +8,13 @@
 			<param name="ConversionPattern" value="%-5p %c - %m%n" />
 		</layout>
 	</appender>
-	
+
 	<logger name="org.springframework.data">
-		<level value="DEBUG"/>
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="com.first">
+		<level value="DBUG" />
 	</logger>
 
 	<root>

@@ -7,7 +7,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.first.hr.domain.Employee;
-
 @RepositoryRestResource(collectionResourceRel = "employee", path = "employee")
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
 	List<Employee> findByLastNameContaining(@Param("name") String name);
